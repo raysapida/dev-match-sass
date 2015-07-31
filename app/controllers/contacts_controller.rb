@@ -8,12 +8,12 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = contact.new(contact_params)
+    @contact = Contact.new(contact_params)
 
     respond_to do |format|
       if @contact.save
         flash[:notice] = 'contact was successfully created.'
-        format.html { redirect_to(@contact) }
+        format.html { redirect_to root_path }
       else
         format.html { render action: 'new' }
       end
