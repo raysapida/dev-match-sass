@@ -12,6 +12,11 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
+        name = params[:contact][:name]
+        email = params[:contact][:email]
+        body = params[:contact][:comments]
+        ContactMailer.contact_email(name, email, body).deliver_later
+
         flash[:success] = 'Message sent.'
         format.html { redirect_to root_path }
       else
