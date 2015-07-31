@@ -12,9 +12,10 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        flash[:notice] = 'contact was successfully created.'
+        flash[:success] = 'Message sent.'
         format.html { redirect_to root_path }
       else
+        flash[:danger] = 'Error occured, message has not been sent.'
         format.html { render action: 'new' }
       end
     end
