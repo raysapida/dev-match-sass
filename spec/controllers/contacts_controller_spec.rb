@@ -7,6 +7,12 @@ RSpec.describe ContactsController, type: :controller do
      comments: 'Comment'}
   }
 
+  let(:invalid_attributes) {
+    {name: '',
+     email: '',
+     comments: ''}
+  }
+
   context 'GET new' do
     subject { get :new }
 
@@ -25,6 +31,11 @@ RSpec.describe ContactsController, type: :controller do
     it 'redirects to root path' do
       post :create, { :contact => valid_attributes }
       expect(response).to redirect_to root_path
+    end
+
+    it 'renders new template if invalid' do
+      post :create, { :contact => invalid_attributes }
+      expect(response).to render_template :new
     end
   end
 end
