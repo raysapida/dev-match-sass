@@ -11,7 +11,7 @@ RSpec.describe PagesController, type: :controller do
 
     it 'renders home template' do
       get :home
-      expect(response.body).to match(/Home/im)
+      expect(response.body).to match(/Welcome/im)
     end
   end
 
