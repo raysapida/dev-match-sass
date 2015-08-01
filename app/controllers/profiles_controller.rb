@@ -16,11 +16,16 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
 
     respond_to do |format|
       format.html # show.html.erb
     end
+  end
+
+  def edit
+    @user = User.find(params[:user_id])
+    @profile = @user.profile
   end
 
   private
