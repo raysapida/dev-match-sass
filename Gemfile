@@ -16,6 +16,7 @@ gem 'devise'
 gem 'stripe'
 gem 'figaro'
 gem 'puma'
+gem 'paperclip'
 
 group :development, :test do
   gem 'byebug'
