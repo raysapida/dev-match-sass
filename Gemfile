@@ -13,6 +13,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'devise'
+gem 'stripe'
+gem 'figaro'
+gem 'puma'
 
 group :development, :test do
   gem 'byebug'
@@ -24,3 +27,6 @@ group :development, :test do
   gem 'shoulda-matchers'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
