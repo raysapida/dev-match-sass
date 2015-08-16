@@ -17,6 +17,7 @@ gem 'stripe'
 gem 'figaro'
 gem 'puma'
 gem 'paperclip'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug'
