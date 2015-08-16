@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe PagesController, type: :controller do
+  let!(:basic) { Plan.create(name: 'basic', price: 0, id: 1) }
+  let!(:pro) { Plan.create(name: 'pro', price: 10, id: 2) }
+
   context 'GET home' do
     render_views
 
